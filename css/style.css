@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap');
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-header {
+    width: 500px;
+    height: 250px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.topnav-item{
+    display: flex;
+}
+/* .navbar-logo {
+    width: 90px;
+    font-family: 'Kiwi Maru', serif !important;
+  } */
+
+.header-logo {
+    font-family: 'Kiwi Maru', serif !important;
+    font-weight: bold !important;
+    padding: 30%;
+}
+
+/* Style the links inside the navigation */
+.topnav a {
+    color: black;
+    text-align: center;
+    margin: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+}
+.topnav-link a{
+    font-size: small;
+}
+
+/* Button Sign In */
+
+/* .topnav a.signin {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 8px 12px;
+    margin: 6px;
+    text-align: center;
+    border-radius: 10px;
+} */
+
+/* Change the color of links on hover */
+.topnav-link a:hover {
+    color: blue;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+    margin-left: 42%;
+}
+
+.section {
+    text-align: center;
+}
+
+.section-1 {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.section-1 img {
+    width: 400px;
+    height: 250px;
+    margin: 35px;
+}
+.product-card-content {
+    text-align: center;
+    margin: auto;
+}
+
+.section-1 a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    margin: 6px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.section-2 {
+    background-color: #e8eae6;
+    padding: 20px;   
+    
+}
+
+.section-2-flex {
+    display: flex;
+}
+
+.section-2-item {
+    padding: 10px;
+    text-align: justify;
+    justify-content: center;
+}
+
+.section-3-flex {
+    display: flex;
+    margin: 30px;
+}
+.section-3-item {
+    margin: 20px;
+}
+
+.section-4 {
+    background-color: #e8eae6;
+}
+
+.section-4-image img {
+    width: 300px;
+    height: 170px;
+    margin: 35px;
+}
+
+.section-5-flex {
+    text-align: left;
+    width: 45%;
+    margin: 0 0 0 40px;
+}
+
+input[type=text], select, textarea[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
