@@ -34,7 +34,6 @@ include('../connection.php');
             <div class="card">
               <div class="card-body">
                 <a class="btn btn-primary mb-2" href="/ecommerce/admin/product/create_product.php">Create</a>
-
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -47,23 +46,21 @@ include('../connection.php');
                   </thead>
                   <tbody>
                     <?php
-                    $result = mysqli_query($link, "select * from product");
+                      $result = mysqli_query($link, "select * from product");
 
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      echo "
+                      while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
                       <tr>
-                        <td>$row[id]</td>
-                        <td>$row[name]</td>
-                        <td>$row[stock]</td>
-                        <td>$row[price]</td>
+                        <td><?=$row['id']?></td>
+                        <td><?=$row['name']?></td>
+                        <td><?=$row['stock']?></td>
+                        <td><?=$row['price']?></td>
                         <td>
-                          <a href='/ecommerce/admin/product/edit_product.php?id=$row[id]' class='btn btn-success'>Edit</a>
-                          <a href='/ecommerce/admin/product/edit_product.php?id=$row[id]' class='btn btn-danger'>Delete</a>
+                          <a href='/ecommerce/admin/product/edit_product.php?id=<?=$row['id']?>' class='btn btn-success'>Edit</a>
+                          <a href='/ecommerce/admin/product/function/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('Data <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
-                       ";
-                    }
-                    ?>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -78,26 +75,6 @@ include('../connection.php');
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 </div>
 
 <?php include('../layout/foot.php') ?>
