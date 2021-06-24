@@ -34,7 +34,7 @@ include('../../config.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <form action="function/create.php" method="POSt">
+                <form action="function/create.php" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Name</label>
                     <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
@@ -60,12 +60,8 @@ include('../../config.php');
                     <textarea name="detail" rows="5" class="form-control"></textarea>
                   </div>
                   <div class="form-group">
-                    <label>Image 1</label>
-                    <input name="image_url" type="file" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label>Image 2</label>
-                    <input name="image_url_2" type="file" class="form-control">
+                    <label>Image</label>
+                    <input name="image_url" type="file" class="form-control" accept="image/*">
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

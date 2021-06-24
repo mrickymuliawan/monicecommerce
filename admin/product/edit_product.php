@@ -37,7 +37,7 @@ $row = mysqli_fetch_assoc($result);
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <form action="function/edit.php?id=<?= $_GET['id'] ?>" method="POSt">
+                <form action="function/edit.php?id=<?= $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Name</label>
                     <input name="name" value="<?= $row['name'] ?>" type="text" class="form-control" aria-describedby="emailHelp">
@@ -56,12 +56,8 @@ $row = mysqli_fetch_assoc($result);
                   </div>
                   <div class="form-group">
                     <label>Image 1</label>
-                    <input name="image_url" type="file" class="form-control">
-                    <img src="" alt="">
-                  </div>
-                  <div class="form-group">
-                    <label>Image 2</label>
-                    <input name="image_url_2" type="file" class="form-control">
+                    <input name="image_url" type="file" class="form-control" accept="image/*">
+                    <img src="<?= $row['image_url']?>" alt="image detail">
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
