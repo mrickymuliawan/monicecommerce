@@ -1,3 +1,19 @@
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+  <div class="p-3">
+    <h5>Title</h5>
+    <p>Sidebar content</p>
+  </div>
+</aside>
+<!-- /.control-sidebar -->
+
+<footer class="main-footer">
+  <!-- To the right -->
+  <div class="float-right d-none d-sm-inline">Anything you want</div>
+  <!-- Default to the left -->
+  <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+</footer>
 <script src="http://php.local/ecommerce/css/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="http://php.local/ecommerce/css/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

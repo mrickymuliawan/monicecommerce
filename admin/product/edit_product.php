@@ -37,7 +37,7 @@ $row = mysqli_fetch_assoc($result);
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <form action="function/edit.php?id=<?= $_GET['id'] ?>" method="POSt">
+                <form action="function/edit.php?id=<?= $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Name</label>
                     <input name="name" value="<?= $row['name'] ?>" type="text" class="form-control" aria-describedby="emailHelp">
@@ -56,12 +56,8 @@ $row = mysqli_fetch_assoc($result);
                   </div>
                   <div class="form-group">
                     <label>Image 1</label>
-                    <input name="image_url" type="file" class="form-control">
-                    <img src="" alt="">
-                  </div>
-                  <div class="form-group">
-                    <label>Image 2</label>
-                    <input name="image_url_2" type="file" class="form-control">
+                    <input name="image_url" type="file" class="form-control" accept="image/*">
+                    <img src="<?= $row['image_url']?>" alt="image detail">
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -78,26 +74,6 @@ $row = mysqli_fetch_assoc($result);
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
 </div>
 
 <?php include('layout/foot.php') ?>

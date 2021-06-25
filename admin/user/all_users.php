@@ -13,12 +13,12 @@ include('../connection.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Product</h1>
+            <h1 class="m-0">Data Users</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
+              <li class="breadcrumb-item active">User</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -33,31 +33,31 @@ include('../connection.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/ecommerce/admin/product/create_product.php">Create</a>
+                <a class="btn btn-primary mb-2" href="/ecommerce/admin/user/create.php">Create</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
                       <th>No</th>
                       <th>Name</th>
-                      <th>Stock</th>
-                      <th>Price</th>
+                      <th>Email</th>
+                      <th>Role</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                      $result = mysqli_query($link, "select * from product");
+                    $result = mysqli_query($link, "select * from user");
 
-                      while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      ?>
                       <tr>
                         <td><?=$row['id']?></td>
                         <td><?=$row['name']?></td>
-                        <td><?=$row['stock']?></td>
-                        <td>Rp. <?=number_format($row['price'])?></td>
+                        <td><?=$row['email']?></td>
+                        <td><?=$row['role']?></td>
                         <td>
-                          <a href='/ecommerce/admin/product/edit_product.php?id=<?=$row['id']?>' class='btn btn-success'>Edit</a>
-                          <a href='/ecommerce/admin/product/function/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('Data <?= $row['name']; ?> Akan Dihapus');">Delete</a>
+                          <a href='/ecommerce/admin/user/edit.php?id=<?=$row['id']?>' class='btn btn-success'>Edit</a>
+                          <a href='/ecommerce/admin/user/functions/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('User <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>
@@ -75,6 +75,7 @@ include('../connection.php');
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 </div>
 
 <?php include('../layout/foot.php') ?>

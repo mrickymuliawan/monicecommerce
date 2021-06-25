@@ -1,3 +1,3 @@
 <?php
 
-$baseUrl = 'php.local/ecommerce';
+$baseUrl = 'http://php.local/ecommerce';
