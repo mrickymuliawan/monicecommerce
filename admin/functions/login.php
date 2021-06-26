@@ -2,8 +2,8 @@
 
 include('../../../connection.php');
 
-$result = mysqli_query($link, "select * from user where email='$_POST[email]' and password='".md5($_POST['password'])."'");
-$data = mysqli_fetch_row($result);
+$result = mysqli_query($link, "select * from user where email='$_POST[email]' and password='".md5($_POST['password'])."' and role='admin'");
+$data = mysqli_fetch_assoc($result);
 
 if (!$result) {
     echo mysqli_error($link);

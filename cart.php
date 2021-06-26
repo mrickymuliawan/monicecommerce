@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,34 +20,39 @@
     <div class="row justify-content-center">
       <div class='col-8 mt-5 border p-2'>
         <h2>Cart</h2>
-        <table class="table table-striped table-bordered">
+          <form action="functions/process.php" method="post">
+            <table class="table table-striped table-bordered">
 
-          <tr>
-            <th>No</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
-          </tr>
+              <tr>
+                <th style="width:1%">Select</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+              </tr>
 
-          <tr>
-            <td>1</td>
-            <td>Ups 123</td>
-            <td>20</td>
-            <td>Rp. 120.000</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Ups 123</td>
-            <td>20</td>
-            <td>Rp. 120.000</td>
-          </tr>
-          <tr>
-            <td colspan=3>Total</td>
+              <?php
+                include("connection.php");
+                $result = mysqli_query($link, "select json_arrayagg(carts.id) as cart_id,carts.*,product.name, product.price, count(carts.product_id) as qty, sum(product.price) as price from carts inner join product on carts.product_id=product.id where user_id=$_SESSION[user_id] group by carts.product_id");
+                $total = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                  $total += $row['price'];
+              ?>
 
-            <td>Rp. 240.000</td>
-          </tr>
-        </table>
-        <a href="/ecommerce/thankyou.php" class='btn btn-primary'>Checkout </a>
+              <tr>
+                <td class="text-center"><input type="checkbox" checked name="select[]" value='<?=$row['cart_id']?>'></td>
+                <td><?=$row['name']?></td>
+                <td><?=$row['qty']?></td>
+                <td>Rp. <?=number_format($row['price'])?></td>
+              </tr>
+              <?php } ?>
+              <tr>
+                <td colspan=3>Total</td>
+
+                <td>Rp. <?=number_format($total)?></td>
+              </tr>
+            </table>
+            <button type="submit" class="btn btn-primary">Checkout</button>
+          </form>
       </div>
     </div>
 
