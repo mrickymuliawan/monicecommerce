@@ -7,7 +7,7 @@ $result = mysqli_query($link, "select u.name buyer_name,o.id, oi.quantity, oi.pr
 right join `order_item` oi on oi.order_id=o.id 
 inner join `product` p on oi.product_id=p.id 
 inner join `user` u on u.id=o.user_id
-where o.id=1=$_GET[id]");
+where o.id=$_GET[id]");
 $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;

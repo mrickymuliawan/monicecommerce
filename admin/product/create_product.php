@@ -1,7 +1,6 @@
 <?php
 include('../layout/head.php');
 include('../../connection.php');
-include('../../config.php');
 ?>
 
 <div class="wrapper">
@@ -49,10 +48,15 @@ include('../../config.php');
                   </div>
                   <div class="form-group">
                     <label>Kategori</label>
-                    <select class="form-control">
-                      <option value="">Listrik</option>
-                      <option value="">Fiber</option>
-                      <option value="">Cabinet</option>
+                    <select class="form-control" name="categoryId">
+                      <option value="">--</option>
+                      <?php
+                        $result = mysqli_query($link, "select * from categories");
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                      ?>
+                      <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                      <?php } ?>
                     </select>
                   </div>
                   <div class="form-group">

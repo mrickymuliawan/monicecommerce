@@ -3,7 +3,7 @@
 include('../../../connection.php');
 include('../../../config.php');
 
-$sql = "update product set name='$_POST[name]',stock='$_POST[stock]',detail='$_POST[detail]',price=$_POST[price] where id=$_GET[id]";
+$sql = "update product set name='$_POST[name]',stock='$_POST[stock]',detail='$_POST[detail]',price=$_POST[price], category_id=$_POST[categoryId] where id=$_GET[id]";
 if($_FILES['image_url']['size']!=0){
   $target_file = "../../../uploads/" . basename($_FILES["image_url"]["name"]);
   if (move_uploaded_file($_FILES["image_url"]["tmp_name"], $target_file)) {

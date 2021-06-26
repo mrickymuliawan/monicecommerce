@@ -1,3 +1,8 @@
+<?php
+include("connection.php");
+$result = mysqli_query($link, "select * from `order` where id=".$_GET['orderId']);
+$data = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +29,9 @@
         </h2>
         <p>
           Please transfer the total payment exactly up to the last 3 digits for the verification process.
-          before 21:00 WIB
+          before <?=date("Y-m-d H:i:s", strtotime("+30 minutes", strtotime($data['created_at'])))?>
         </p>
-        <h1 class='text-center'>Rp. 240.000</h1>
+        <h1 class='text-center'>Rp. <?=number_format($data['total_price']+rand(100,999))?></h1>
         <p class='text-center'>
           <a href="/ecommerce/">Back To Home</a>
 

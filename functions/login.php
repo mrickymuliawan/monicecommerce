@@ -13,7 +13,7 @@ if (!$result) {
     session_start();
     $_SESSION['user_id'] = $data['id'];
     $_SESSION['name'] = $data['name'];
-    if($_POST['redirect']!==null && $_POST['data']!==null){
+    if($_POST['redirect']!=='' && $_POST['data']!==''){
         header("Location: /ecommerce/functions/$_POST[redirect].php?data=$_POST[data]");
     }else{
         header("Location: /ecommerce/");

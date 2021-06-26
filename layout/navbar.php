@@ -23,15 +23,19 @@
     </form>
     <ul class="navbar-nav my-lg-auto ml-auto">
       <?php 
+        include("connection.php");
         session_start();
         if(!isset($_SESSION['name'])){
       ?>
         <li class="nav-item">
           <a class="nav-link" href="/ecommerce/login.php">Login</a>
         </li>
-        <?php } else { ?>
+        <?php } else { 
+          $result = mysqli_query($link, "select id from carts where user_id=$_SESSION[user_id] group by product_id ");
+          $count = mysqli_num_rows($result);
+        ?>
         <li class="nav-item">
-          <a class="nav-link" href="#"><em class="fas fa-shopping-cart"></em> Cart</a>
+          <a class="nav-link" href="/ecommerce/cart.php"> <?php if($count>0) {echo "<span class='badge badge-danger navbar-badge'>$count</span>";}?><em class="fas fa-shopping-cart"></em> Cart</a>
         </li>
         <li class="nav-item">
           <span class="nav-link" ><em class="fas fa-user"></em> <?=ucwords($_SESSION['name'])?></span>
