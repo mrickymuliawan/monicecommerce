@@ -26,6 +26,7 @@ CREATE TABLE `order_item` (
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
@@ -33,7 +34,7 @@ CREATE TABLE `product` (
   `image_url` varchar(100) DEFAULT NULL,
   `image_url_2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- monic_commerce.`user` definition
@@ -44,5 +45,24 @@ CREATE TABLE `user` (
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `role` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- monic_commerce.carts definition
+
+CREATE TABLE `carts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- monic_commerce.categories definition
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
