@@ -6,6 +6,8 @@ CREATE TABLE `order` (
   `total_price` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
