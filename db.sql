@@ -68,3 +68,15 @@ CREATE TABLE `categories` (
   `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- monic_commerce.vouchers definition
+
+CREATE TABLE `vouchers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(100) DEFAULT NULL,
+  `quotas` int DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `expired_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
