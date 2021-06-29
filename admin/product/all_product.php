@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../connection.php');
 ?>
 
 <div class="wrapper">
@@ -56,7 +55,7 @@ include('../connection.php');
                         <td><?=$row['stock']?></td>
                         <td>Rp. <?=number_format($row['price'])?></td>
                         <td>
-                          <a href='/ecommerce/admin/product/edit_product.php?id=<?=$row['id']?>' class='btn btn-success'>Edit</a>
+                          <a href='/ecommerce/admin/product/edit_product.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
                           <a href='/ecommerce/admin/product/function/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('Data <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>

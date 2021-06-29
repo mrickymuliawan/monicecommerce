@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../../connection.php');
 include('../../config.php');
 
 $result = mysqli_query($link, "select * from product where id=$_GET[id]");

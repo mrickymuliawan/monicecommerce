@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../connection.php');
 ?>
 
 <div class="wrapper">
@@ -33,33 +32,36 @@ include('../connection.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
+                <a class="btn btn-primary mb-2" href="/ecommerce/admin/promotion/create.php">Create</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Qty</th>
-                      <th>Total</th>
-                      <th>Status</th>
+                      <th>Code</th>
+                      <th>Description</th>
+                      <th>Quota</th>
+                      <th>Start Date</th>
+                      <th>Expire Date</th>
+                      <th>Voucher Used</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                    $result = mysqli_query($link, "SELECT u.name, o.* FROM `order` o INNER JOIN `user` u ON u.id=o.user_id");
-
+                    $result = mysqli_query($link, "SELECT * FROM vouchers");
                     while ($row = mysqli_fetch_assoc($result)) {
-                    $class = $row['status'] == 'pending payment' ? 'warning' : ($row['status'] == 'proses' ? 'info' : ($row['status'] == 'dikirim' ? 'primary' : 'success'));
                       ?>
                       <tr>
                         <td><?=$row['id']?></td>
-                        <td><?=$row['name']?></td>
-                        <td><?=$row['total_qty']?></td>
-                        <td>Rp. <?=number_format($row['total_price'])?></td>
-                        <td class="text-center"><h5><span class="badge badge-<?=$class?>"><?=ucwords($row['status'])?></span></h5></td>
+                        <td><?=$row['code']?></td>
+                        <td><?=$row['description']?></td>
+                        <td><?=$row['quotas']?></td>
+                        <td><?=$row['start_date']?></td>
+                        <td><?=$row['expired_date']?></td>
+                        <td><?="0"?></td>
                         <td>
-                          <a href="/ecommerce/admin/order/detail.php?id=<?=$row['id']?>" class="btn btn-info">Detail</a>
-                          <a href='/ecommerce/admin/order/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit Status</a>
+                          <a href='/ecommerce/admin/promotion/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
+                          <a href="/ecommerce/admin/promotion/functions/delete.php?id=<?=$row['id']?>" class="btn btn-danger" onclick="return confirm('Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>

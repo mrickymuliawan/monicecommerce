@@ -1,2 +1,9 @@
 <?php
-echo "delete func";
+include('../../../connection.php');
+
+$result = mysqli_query($link, "delete from vouchers where id='$_GET[id]'");
+if (!$result) {
+    echo mysqli_error($link);
+}else{
+    header("Location: /ecommerce/admin/promotion/all_promotions.php");
+}

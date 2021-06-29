@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../connection.php');
 ?>
 
 <div class="wrapper">
@@ -56,7 +55,7 @@ include('../connection.php');
                         <td><?=$row['email']?></td>
                         <td><?=$row['role']?></td>
                         <td>
-                          <a href='/ecommerce/admin/user/edit.php?id=<?=$row['id']?>' class='btn btn-success'>Edit</a>
+                          <a href='/ecommerce/admin/user/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
                           <a href='/ecommerce/admin/user/functions/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('User <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
