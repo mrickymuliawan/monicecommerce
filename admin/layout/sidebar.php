@@ -38,7 +38,7 @@
                with font-awesome or any other icon font library -->
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/ecommerce/admin/report/all_reports.php" class="nav-link">
             <em class="nav-icon fas fa-chart-pie"></em>
             <p>
               Dashboard
@@ -62,7 +62,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/ecommerce/admin/promotion/all_promotions.php" class="nav-link">
             <em class="nav-icon fas fa-bell"></em>
             <p>
               Promotion

@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../../connection.php');
 include('../../config.php');
 
 $result = mysqli_query($link, "select * from user where id=$_GET[id]");

@@ -12,12 +12,12 @@ include('../layout/head.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Create Product</h1>
+            <h1 class="m-0">Create Voucher</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
+              <li class="breadcrumb-item active">Promotion</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -32,39 +32,26 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <form action="function/create.php" method="POST" enctype="multipart/form-data">
+                <form action="functions/store.php" method="POST">
                   <div class="form-group">
-                    <label>Name</label>
-                    <input name="name" type="text" class="form-control" aria-describedby="emailHelp">
+                    <label>Code</label>
+                    <input name="code" type="text" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label>Stock</label>
-                    <input name="stock" type="number" class="form-control">
+                    <label>Description</label>
+                    <input name="description" type="text" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label>Price</label>
-                    <input name="price" type="number" class="form-control">
+                    <label>Quotas</label>
+                    <input name="quota" type="number" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label>Kategori</label>
-                    <select class="form-control" name="categoryId">
-                      <option value="">--</option>
-                      <?php
-                        $result = mysqli_query($link, "select * from categories");
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                      ?>
-                      <option value="<?=$row['id']?>"><?=$row['name']?></option>
-                      <?php } ?>
-                    </select>
+                    <label>Start Date</label>
+                    <input type="datetime-local" class="form-control" name="start_date">
                   </div>
                   <div class="form-group">
-                    <label>Detail</label>
-                    <textarea name="detail" rows="5" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label>Image</label>
-                    <input name="image_url" type="file" class="form-control" accept="image/*">
+                    <label>Expire Date</label>
+                    <input type="datetime-local" name="expire_date" class="form-control" >
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

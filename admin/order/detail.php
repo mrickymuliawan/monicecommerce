@@ -3,10 +3,11 @@ include('../layout/head.php');
 include('../../connection.php');
 include('../../config.php');
 
-$result = mysqli_query($link, "select o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
+$result = mysqli_query($link, "select u.name buyer_name,o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
 right join `order_item` oi on oi.order_id=o.id 
 inner join `product` p on oi.product_id=p.id 
-where o.id=1=$_GET[id]");
+inner join `user` u on u.id=o.user_id
+where o.id=$_GET[id]");
 $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;
@@ -21,7 +22,9 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Detail Order <span class="badge badge-info"><?=ucwords($data[0]['status'])?></span></h1>
+                        <h1 class="m-0">Detail Order</h1><br/>
+                        <h5>Name: <strong><?=ucwords($data[0]['buyer_name'])?></strong></h3>
+                        <h5>Status: <strong><?=ucwords($data[0]['status'])?></strong></h5>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">

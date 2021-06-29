@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../../connection.php');
 include('../../config.php');
 
 $result = mysqli_query($link, "select * from product where id=$_GET[id]");
@@ -51,11 +50,24 @@ $row = mysqli_fetch_assoc($result);
                     <input name="price" value="<?= $row['price'] ?>" type="number" class="form-control">
                   </div>
                   <div class="form-group">
+                    <label>Kategori</label>
+                    <select class="form-control" name="categoryId">
+                      <option value="">--</option>
+                      <?php
+                        $result = mysqli_query($link, "select * from categories");
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                      ?>
+                      <option value="<?=$data['id']?>"><?=$data['name']?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                  <div class="form-group">
                     <label>Detail</label>
                     <textarea name="detail" rows="5" class="form-control"><?= $row['detail'] ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label>Image 1</label>
+                    <label>Image</label>
                     <input name="image_url" type="file" class="form-control" accept="image/*">
                     <img src="<?= $row['image_url']?>" alt="image detail">
                   </div>

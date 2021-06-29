@@ -6,20 +6,44 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/ecommerce">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/ecommerce"><em class="fas fa-home"></em> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ecommerce/login.php">Login</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/ecommerce/blog/">Blog</a>
+        <a class="nav-link" href="/ecommerce/blog/"><em class="fas fa-blog"></em> Blog</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="ml-3 d-inline w-75">
+      <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search something">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button"><em class="fas fa-search"></em></button>
+          </div>
+      </div>
     </form>
+    <ul class="navbar-nav my-lg-auto ml-auto">
+      <?php 
+        include("connection.php");
+        session_start();
+        if(!isset($_SESSION['name'])){
+      ?>
+        <li class="nav-item">
+          <a class="nav-link" href="/ecommerce/login.php">Login</a>
+        </li>
+        <?php } else { 
+          $result = mysqli_query($link, "select id from carts where user_id=$_SESSION[user_id] group by product_id ");
+          $count = mysqli_num_rows($result);
+        ?>
+        <li class="nav-item">
+          <a class="nav-link" href="/ecommerce/cart.php"> <?php if($count>0) {echo "<span class='badge badge-danger navbar-badge'>$count</span>";}?><em class="fas fa-shopping-cart"></em> Cart</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" ><em class="fas fa-user"></em> <?=ucwords($_SESSION['name'])?></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ecommerce/functions/logout.php"><em class="fas fa-sign-out-alt"></em> Logout</a>
+        </li>
+      <?php } ?>
+    </ul>
   </div>
 </nav>

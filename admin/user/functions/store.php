@@ -5,5 +5,6 @@ $result = mysqli_query($link, $sql);
 
 if (!$result) {
   echo mysqli_error($link);
+  return false;
 }
 header("Location: /ecommerce/admin/user/all_users.php");
