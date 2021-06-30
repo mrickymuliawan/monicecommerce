@@ -14,9 +14,11 @@ if($_FILES['image_url']['size']!=0){
     return false;
   }
 }
+echo $sql."<br>";
 $result = mysqli_query($link, $sql);
 
 if (!$result) {
   echo mysqli_error($link);
+  return false;
 }
 header("Location: /ecommerce/admin/product/all_product.php");

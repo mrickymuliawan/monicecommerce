@@ -31,7 +31,7 @@ $data = mysqli_fetch_assoc($result);
           Please transfer the total payment exactly up to the last 3 digits for the verification process.
           before <?=date("Y-m-d H:i:s", strtotime("+30 minutes", strtotime($data['created_at'])))?>
         </p>
-        <h1 class='text-center'>Rp. <?=number_format($data['total_price']+rand(100,999))?></h1>
+        <h1 class='text-center'>Rp. <?=number_format($data['total_price']+rand(100,300))?></h1>
         <p class='text-center'>
           <a href="/ecommerce/">Back To Home</a>
 

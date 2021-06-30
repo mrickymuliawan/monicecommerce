@@ -40,6 +40,7 @@ include('../layout/head.php');
                       <th>Code</th>
                       <th>Description</th>
                       <th>Quota</th>
+                      <th>Percent</th>
                       <th>Start Date</th>
                       <th>Expire Date</th>
                       <th>Voucher Used</th>
@@ -56,6 +57,7 @@ include('../layout/head.php');
                         <td><?=$row['code']?></td>
                         <td><?=$row['description']?></td>
                         <td><?=$row['quotas']?></td>
+                        <td><?=$row['percent']?>%</td>
                         <td><?=$row['start_date']?></td>
                         <td><?=$row['expired_date']?></td>
                         <td><?="0"?></td>
