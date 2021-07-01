@@ -1,9 +1,32 @@
 <?php
 include('connection.php');
 date_default_timezone_set('Asia/Jakarta');
-if(!empty($_POST['select'])){
+if(isset($_POST['code_btn'])){
+    $query = mysqli_query($link, "select * from vouchers where code='$_POST[voucher_code]'");
+    $result = mysqli_fetch_assoc($query);
+    $error = mysqli_error($link);
+    if($error){
+        echo $error;
+    }else{
+        if(!$result){
+            header("Location: /ecommerce/cart.php?info=Voucher not found&decorator=danger&accept=false");
+        }else{
+            $now = date("Y-m-d H:i:s");
+            $start = date("Y-m-d H:i:s", strtotime($result['start_date']));
+            $exp = date("Y-m-d H:i:s", strtotime($result['expired_date']));
+            if($result['quotas']==0){
+                header("Location: /ecommerce/cart.php?info=Voucher has reached limit&decorator=danger&accept=false");
+            }elseif($now < $start || $now > $exp){
+                header("Location: /ecommerce/cart.php?info=Voucher cannot be used&decorator=danger&accept=false");
+            }else{
+                header("Location: /ecommerce/cart.php?info=Voucher applied&decorator=info&vcode=$_POST[voucher_code]&accept=true");
+            }
+        }
+    }
+}elseif(!empty($_POST['select'])){
     session_start();
     $totalQty = $totalPrice = 0;
+    $voucherId = null;
     foreach ($_POST['data'] as $inputData) {
         $input = json_decode($inputData,true);
         $query = mysqli_query($link, "select stock, name from product where id=$input[productId]");
@@ -16,12 +39,21 @@ if(!empty($_POST['select'])){
         $totalPrice += $input['price'];
     }
     foreach ($_POST['select'] as $selects) {
-        $data = json_decode($selects,true);
-        foreach ($data as $cartId) {
+        $selectData = json_decode($selects,true);
+        foreach ($selectData as $cartId) {
             mysqli_query($link, "delete from carts where id=$cartId");
         }
     }
-    mysqli_query($link, "insert into `order` (total_qty, total_price, user_id, status, created_at, updated_at) values ('$totalQty', '$totalPrice', '$_SESSION[user_id]', 'pending payment', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
+    if(isset($_POST['voucher_code'])){
+        if($_POST['accept_voucher']=='true'){
+            $query = mysqli_query($link, "select * from vouchers where code='$_POST[voucher_code]'");
+            $result = mysqli_fetch_assoc($query);
+            $totalPrice = $totalPrice - (($totalPrice * $result['percent'])/100);
+            $voucherId = $result['id'];
+            mysqli_query($link, "update vouchers set quotas=".($result['quotas']-1)." where code='$_POST[voucher_code]'");
+        }
+    }
+    mysqli_query($link, "insert into `order` (total_qty, total_price, user_id, status, voucher_id, created_at, updated_at) values ('$totalQty', '$totalPrice', '$_SESSION[user_id]', 'pending payment', $voucherId,'".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
     $orderId = mysqli_insert_id($link);
     foreach ($_POST['data'] as $inputData) {
         $input = json_decode($inputData,true);

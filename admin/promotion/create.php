@@ -46,6 +46,10 @@ include('../layout/head.php');
                     <input name="quota" type="number" class="form-control">
                   </div>
                   <div class="form-group">
+                    <label>Percent</label>
+                    <input type="number" class="form-control" name="percent">
+                  </div>
+                  <div class="form-group">
                     <label>Start Date</label>
                     <input type="datetime-local" class="form-control" name="start_date">
                   </div>

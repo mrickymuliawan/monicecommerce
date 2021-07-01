@@ -49,6 +49,10 @@ $result = mysqli_fetch_assoc($query);
                     <input name="quota" type="number" class="form-control" value="<?=$result['quotas']?>">
                   </div>
                   <div class="form-group">
+                    <label>Percent</label>
+                    <input type="number" class="form-control" name="percent" value="<?=$result['percent']?>">
+                  </div>
+                  <div class="form-group">
                     <label>Start Date</label>
                     <input type="datetime-local" class="form-control" name="start_date" id="start" value="<?=date("Y-m-d", strtotime($result['start_date']))."T".date("H:i", strtotime($result['start_date']))?>">
                   </div>

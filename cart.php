@@ -57,8 +57,26 @@
               <td>Rp. <?=number_format($total)?></td>
             </tr>
           </table>
+          <div class="row justify-content-end">
+            <div class="col-md-3">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="voucher_code" <?php if($_GET['decorator']=='info'){echo 'readonly value="'.$_GET['vcode'].'"';}?> placeholder="Voucher Code">
+                  <input type="hidden" name="accept_voucher" value="<?=$_GET['accept']?>">
+                  <div class="input-group-append">
+                    <button class="btn btn-success"  type="submit" <?php if($_GET['decorator']=='info'){echo 'disabled';}?> value="apply-code" name="code_btn">Apply</button>
+                  </div>
+                </div>
+            </div>
+          </div>
           <?php if($i!=0){?>
-          <button type="submit" id="checkout" class="btn btn-primary">Checkout</button>
+          <div class="row justify-content-end mr-auto mt-2">
+            <?php if(isset($_GET['info'])){?>
+            <div class="col-md-3 text-right mt-2">
+              <span class="text-<?=$_GET['decorator']?>"><?=$_GET['info']?></span>
+            </div>
+            <?php } ?>
+            <button type="submit" class="btn btn-primary">Checkout</button>
+          </div>
           <?php } ?>
         </form>
       </div>

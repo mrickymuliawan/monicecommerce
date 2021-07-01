@@ -18,21 +18,23 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class='col-8 mt-5 border p-2'>
-        <h2>Login</h2>
-        <p class="alert-warning text-center"><?=$_GET['message']?></p>
-        <form method="POST" action='./functions/login.php'>
+        <h2>Register</h2>
+        <p class="alert-info text-center"><?=$_GET['message']?></p>
+        <form method="POST" action='./functions/register.php'>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
-            <input type="hidden" name="redirect" value="<?=$_GET['redirect']?>">
-            <input type="hidden" name="data" value='<?=$_GET['data']?>'>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Name">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">
           </div>
-          <div class="text-right"><a href="register.php">Register</a></div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <input type="hidden" name="role" value="user">
+          </div>
+          <div class="text-right"><a href="login.php">Login</a></div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
