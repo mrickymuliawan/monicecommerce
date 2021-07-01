@@ -50,7 +50,7 @@ if(isset($_POST['code_btn'])){
             $result = mysqli_fetch_assoc($query);
             $totalPrice = $totalPrice - (($totalPrice * $result['percent'])/100);
             $voucherId = $result['id'];
-            mysqli_query($link, "update voucher set quotas='".($result['quotas']-1)."' where code='$_POST[voucher_code]'");
+            mysqli_query($link, "update vouchers set quotas=".($result['quotas']-1)." where code='$_POST[voucher_code]'");
         }
     }
     mysqli_query($link, "insert into `order` (total_qty, total_price, user_id, status, voucher_id, created_at, updated_at) values ('$totalQty', '$totalPrice', '$_SESSION[user_id]', 'pending payment', $voucherId,'".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");

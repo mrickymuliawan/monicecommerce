@@ -49,7 +49,7 @@ include('../layout/head.php');
                   </thead>
                   <tbody>
                     <?php
-                    $result = mysqli_query($link, "SELECT * FROM vouchers");
+                    $result = mysqli_query($link, "SELECT vouchers.*, COUNT(`order`.voucher_id) as voucher_used FROM vouchers LEFT JOIN `order` ON vouchers.id=`order`.voucher_id GROUP BY vouchers.id");
                     while ($row = mysqli_fetch_assoc($result)) {
                       ?>
                       <tr>
@@ -60,7 +60,7 @@ include('../layout/head.php');
                         <td><?=$row['percent']?>%</td>
                         <td><?=$row['start_date']?></td>
                         <td><?=$row['expired_date']?></td>
-                        <td><?="0"?></td>
+                        <td><?=$row['voucher_used']?></td>
                         <td>
                           <a href='/ecommerce/admin/promotion/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
                           <a href="/ecommerce/admin/promotion/functions/delete.php?id=<?=$row['id']?>" class="btn btn-danger" onclick="return confirm('Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>

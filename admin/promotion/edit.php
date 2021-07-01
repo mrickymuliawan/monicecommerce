@@ -50,7 +50,7 @@ $result = mysqli_fetch_assoc($query);
                   </div>
                   <div class="form-group">
                     <label>Percent</label>
-                    <input type="number" class="form-control" name="percent">
+                    <input type="number" class="form-control" name="percent" value="<?=$result['percent']?>">
                   </div>
                   <div class="form-group">
                     <label>Start Date</label>
