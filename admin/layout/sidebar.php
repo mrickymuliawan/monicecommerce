@@ -1,3 +1,5 @@
+<?php include('config.php'); ?>
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
@@ -38,15 +40,15 @@
                with font-awesome or any other icon font library -->
 
         <li class="nav-item">
-          <a href="/ecommerce/admin/report/all_reports.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/report/all_reports.php" class="nav-link">
             <em class="nav-icon fas fa-chart-pie"></em>
             <p>
               Dashboard
             </p>
           </a>
-        </li> 
+        </li>
         <li class="nav-item">
-          <a href="/ecommerce/admin/user/all_users.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/user/all_users.php" class="nav-link">
             <em class="nav-icon fas fa-user"></em>
             <p>
               User
@@ -54,7 +56,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/ecommerce/admin/order/all_orders.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/order/all_orders.php" class="nav-link">
             <em class="nav-icon fas fa-shopping-cart"></em>
             <p>
               Order
@@ -62,7 +64,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/ecommerce/admin/promotion/all_promotions.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/promotion/all_promotions.php" class="nav-link">
             <em class="nav-icon fas fa-bell"></em>
             <p>
               Promotion
@@ -70,7 +72,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/ecommerce/admin/product/all_product.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/product/all_product.php" class="nav-link">
             <em class="nav-icon fas fa-list"></em>
             <p>
               Product
@@ -78,7 +80,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/ecommerce/admin/login.php" class="nav-link">
+          <a href="<?= $baseUrl ?>/admin/functions/logout.php" class="nav-link">
             <em class="nav-icon fas fa-sign-out-alt"></em>
             <p>
               LogOut

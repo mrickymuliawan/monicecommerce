@@ -7,4 +7,4 @@ if (!$result) {
   echo mysqli_error($link);
   return false;
 }
-header("Location: /ecommerce/admin/promotion/all_promotions.php");
+header("Location: $baseUrl/admin/promotion/all_promotions.php");

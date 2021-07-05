@@ -31,10 +31,10 @@ $row = mysqli_fetch_assoc($result);
         <h4 class="mt-0"><?php echo $row['name'] ?></h4>
         <h5><strong>Rp. <?php echo number_format($row['price']) ?></strong></h5>
         <hr>
-        <form action="/ecommerce/functions/cart.php" method="post">
+        <form action="<?= $baseUrl ?>/functions/cart.php" method="post">
           <div class="form-group">
             <label><strong>Qty</strong></label>
-            <input type="hidden" name="productId" value="<?=$_GET['id']?>">
+            <input type="hidden" name="productId" value="<?= $_GET['id'] ?>">
             <div class="row">
               <input min="1" max="<?= $row['stock'] ?>" value="1" name="qty" type="number" class="form-control col-sm-4 ml-3 text-center">
               <label class="col-sm-3 col-form-label">Stok <strong><?= $row['stock'] ?></strong></label>

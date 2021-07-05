@@ -32,7 +32,7 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/ecommerce/admin/product/create_product.php">Create</a>
+                <a class="btn btn-primary mb-2" href="<?= $baseUrl ?>/admin/product/create_product.php">Create</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -45,18 +45,18 @@ include('../layout/head.php');
                   </thead>
                   <tbody>
                     <?php
-                      $result = mysqli_query($link, "select * from product");
+                    $result = mysqli_query($link, "select * from product");
 
-                      while ($row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                       <tr>
-                        <td><?=$row['id']?></td>
-                        <td><?=$row['name']?></td>
-                        <td><?=$row['stock']?></td>
-                        <td>Rp. <?=number_format($row['price'])?></td>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['name'] ?></td>
+                        <td><?= $row['stock'] ?></td>
+                        <td>Rp. <?= number_format($row['price']) ?></td>
                         <td>
-                          <a href='/ecommerce/admin/product/edit_product.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
-                          <a href='/ecommerce/admin/product/function/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('Data <?= $row['name']; ?> Akan Dihapus');">Delete</a>
+                          <a href='<?= $baseUrl ?>/admin/product/edit_product.php?id=<?= $row['id'] ?>' class='btn btn-warning'>Edit</a>
+                          <a href='<?= $baseUrl ?>/admin/product/function/delete.php?id=<?= $row['id'] ?>' class='btn btn-danger' onclick="return confirm('Data <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>

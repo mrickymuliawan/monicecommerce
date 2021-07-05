@@ -54,11 +54,11 @@ $row = mysqli_fetch_assoc($result);
                     <select class="form-control" name="categoryId">
                       <option value="">--</option>
                       <?php
-                        $result = mysqli_query($link, "select * from categories");
+                      $result = mysqli_query($link, "select * from categories");
 
-                        while ($data = mysqli_fetch_assoc($result)) {
+                      while ($data = mysqli_fetch_assoc($result)) {
                       ?>
-                      <option value="<?=$data['id']?>"><?=$data['name']?></option>
+                        <option value="<?= $data['id'] ?>" <?= $data['id'] == $row['category_id'] ? 'selected' : '' ?>> <?= $data['name'] ?></option>
                       <?php } ?>
                     </select>
                   </div>
@@ -69,7 +69,7 @@ $row = mysqli_fetch_assoc($result);
                   <div class="form-group">
                     <label>Image</label>
                     <input name="image_url" type="file" class="form-control" accept="image/*">
-                    <img src="<?= $row['image_url']?>" alt="image detail">
+                    <img src="<?= $row['image_url'] ?>" alt="image detail">
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

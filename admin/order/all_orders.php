@@ -48,17 +48,19 @@ include('../layout/head.php');
                     $result = mysqli_query($link, "SELECT u.name, o.* FROM `order` o INNER JOIN `user` u ON u.id=o.user_id");
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                    $class = $row['status'] == 'pending payment' ? 'warning' : ($row['status'] == 'proses' ? 'info' : ($row['status'] == 'dikirim' ? 'primary' : 'success'));
-                      ?>
+                      $class = $row['status'] == 'pending payment' ? 'warning' : ($row['status'] == 'proses' ? 'info' : ($row['status'] == 'dikirim' ? 'primary' : 'success'));
+                    ?>
                       <tr>
-                        <td><?=$row['id']?></td>
-                        <td><?=$row['name']?></td>
-                        <td><?=$row['total_qty']?></td>
-                        <td>Rp. <?=number_format($row['total_price'])?></td>
-                        <td class="text-center"><h5><span class="badge badge-<?=$class?>"><?=ucwords($row['status'])?></span></h5></td>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['name'] ?></td>
+                        <td><?= $row['total_qty'] ?></td>
+                        <td>Rp. <?= number_format($row['total_price']) ?></td>
+                        <td class="text-center">
+                          <h5><span class="badge badge-<?= $class ?>"><?= ucwords($row['status']) ?></span></h5>
+                        </td>
                         <td>
-                          <a href="/ecommerce/admin/order/detail.php?id=<?=$row['id']?>" class="btn btn-info">Detail</a>
-                          <a href='/ecommerce/admin/order/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit Status</a>
+                          <a href="<?= $baseUrl ?>/admin/order/detail.php?id=<?= $row['id'] ?>" class="btn btn-info">Detail</a>
+                          <a href='<?= $baseUrl ?>/admin/order/edit.php?id=<?= $row['id'] ?>' class='btn btn-warning'>Edit Status</a>
                         </td>
                       </tr>
                     <?php } ?>
