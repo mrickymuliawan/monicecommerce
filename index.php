@@ -1,4 +1,4 @@
-<?php include("connection.php");?>
+<?php include("connection.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,12 +45,16 @@
       <div class="col-md-2">
         <h5>Categories</h5>
         <div class="list-group">
-          <a href="index.php" class="list-group-item list-group-item-action <?php if($_GET['category']==$row['id']) {echo 'active';}?>">All</a>
+          <a href="index.php" class="list-group-item list-group-item-action <?php if ($_GET['category'] == $row['id']) {
+                                                                              echo 'active';
+                                                                            } ?>">All</a>
           <?php
-            $result = mysqli_query($link, "select * from categories");
-            while ($row = mysqli_fetch_assoc($result)) {?>
-            <a href="index.php?category=<?=$row['id']?>" class="list-group-item list-group-item-action <?php if($_GET['category']==$row['id']) {echo 'active';}?>"><?=$row['name']?></a>
-          <?php }?>
+          $result = mysqli_query($link, "select * from categories");
+          while ($row = mysqli_fetch_assoc($result)) { ?>
+            <a href="index.php?category=<?= $row['id'] ?>" class="list-group-item list-group-item-action <?php if ($_GET['category'] == $row['id']) {
+                                                                                                          echo 'active';
+                                                                                                        } ?>"><?= $row['name'] ?></a>
+          <?php } ?>
         </div>
       </div>
       <div class="col-10">
@@ -67,9 +71,9 @@
                 <img class='card-img-top' src='$row[image_url]' alt='thumb Image' style='height:350px'>
                 <div class='card-body'>
                   <h5 class='card-title'>$row[name]</h5>
-                  <h5 class='card-title'>Rp. ".number_format($row['price'])."</h5>
+                  <h5 class='card-title'>Rp. " . number_format($row['price']) . "</h5>
                   <p class='card-text'>$row[detail]</p>
-                  <p><a href='detailProduct.php?id=$row[id]' class='btn btn-primary' role='button'>See detail</a> <a href='/ecommerce/functions/cart.php?productId=$row[id]&qty=1' class='btn btn-light' role='button'>Add to cart</a></p>
+                  <p><a href='detailProduct.php?id=$row[id]' class='btn btn-primary' role='button'>See detail</a> <a href='$baseUrl/functions/cart.php?productId=$row[id]&qty=1' class='btn btn-light' role='button'>Add to cart</a></p>
                 </div>
               </div>
               </div>

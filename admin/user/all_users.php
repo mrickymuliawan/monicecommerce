@@ -32,7 +32,7 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/ecommerce/admin/user/create.php">Create</a>
+                <a class="btn btn-primary mb-2" href="<?= $baseUrl ?>/admin/user/create.php">Create</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -48,15 +48,15 @@ include('../layout/head.php');
                     $result = mysqli_query($link, "select * from user");
 
                     while ($row = mysqli_fetch_assoc($result)) {
-                      ?>
+                    ?>
                       <tr>
-                        <td><?=$row['id']?></td>
-                        <td><?=$row['name']?></td>
-                        <td><?=$row['email']?></td>
-                        <td><?=$row['role']?></td>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['name'] ?></td>
+                        <td><?= $row['email'] ?></td>
+                        <td><?= $row['role'] ?></td>
                         <td>
-                          <a href='/ecommerce/admin/user/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
-                          <a href='/ecommerce/admin/user/functions/delete.php?id=<?=$row['id']?>' class='btn btn-danger' onclick="return confirm('User <?= $row['name']; ?> Akan Dihapus');">Delete</a>
+                          <a href='<?= $baseUrl ?>/admin/user/edit.php?id=<?= $row['id'] ?>' class='btn btn-warning'>Edit</a>
+                          <a href='<?= $baseUrl ?>/admin/user/functions/delete.php?id=<?= $row['id'] ?>' class='btn btn-danger' onclick="return confirm('User <?= $row['name']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>

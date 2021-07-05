@@ -1,3 +1,4 @@
 <?php
 
-$link = mysqli_connect("mysql", "root", "root", "monic_commerce");
+$link = mysqli_connect("mariadb", "root", "root", "ecommerce");
+include('config.php');

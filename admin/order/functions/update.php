@@ -8,4 +8,4 @@ if (!$result) {
   echo mysqli_error($link);
   return false;
 }
-header("Location: /ecommerce/admin/order/all_orders.php");
+header("Location: $baseUrl/admin/order/all_orders.php");

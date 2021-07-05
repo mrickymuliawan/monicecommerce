@@ -32,7 +32,7 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="/ecommerce/admin/promotion/create.php">Create</a>
+                <a class="btn btn-primary mb-2" href="<?= $baseUrl ?>/admin/promotion/create.php">Create</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -51,19 +51,19 @@ include('../layout/head.php');
                     <?php
                     $result = mysqli_query($link, "SELECT vouchers.*, COUNT(`order`.voucher_id) as voucher_used FROM vouchers LEFT JOIN `order` ON vouchers.id=`order`.voucher_id GROUP BY vouchers.id");
                     while ($row = mysqli_fetch_assoc($result)) {
-                      ?>
+                    ?>
                       <tr>
-                        <td><?=$row['id']?></td>
-                        <td><?=$row['code']?></td>
-                        <td><?=$row['description']?></td>
-                        <td><?=$row['quotas']?></td>
-                        <td><?=$row['percent']?>%</td>
-                        <td><?=$row['start_date']?></td>
-                        <td><?=$row['expired_date']?></td>
-                        <td><?=$row['voucher_used']?></td>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['code'] ?></td>
+                        <td><?= $row['description'] ?></td>
+                        <td><?= $row['quotas'] ?></td>
+                        <td><?= $row['percent'] ?>%</td>
+                        <td><?= $row['start_date'] ?></td>
+                        <td><?= $row['expired_date'] ?></td>
+                        <td><?= $row['voucher_used'] ?></td>
                         <td>
-                          <a href='/ecommerce/admin/promotion/edit.php?id=<?=$row['id']?>' class='btn btn-warning'>Edit</a>
-                          <a href="/ecommerce/admin/promotion/functions/delete.php?id=<?=$row['id']?>" class="btn btn-danger" onclick="return confirm('Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>
+                          <a href='<?= $baseUrl ?>admin/promotion/edit.php?id=<?= $row['id'] ?>' class='btn btn-warning'>Edit</a>
+                          <a href='<?= $baseUrl ?>/admin/promotion/functions/delete.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm(' Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>
