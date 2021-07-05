@@ -57,7 +57,7 @@
         <p>&nbsp;</p>
         <p><span style="font-weight: 400;">Tentunya pengontrol menjadi fungsi selanjutnya. Karena setiap panel masing-masing memiliki beban tetapi itu semua dapat dikontrol dalam perjalanannya. Jadi seluruh kelistrikan bisa di kontrol hanya pada satu tempat saja.</span></p>
         <p><span style="font-weight: 400;">Itu beberapa fungsi utama mengenai box panel. Namun masih banyak detail lainnya jika memang ingin memperdalamnya. Yang utama komponen tersebut sulit ditemukan.&nbsp;</span></p>
-        <p><span style="font-weight: 400;">Jika Anda tertarik untuk membeli dan menggunakan box panel kabit yang murah, di tempat yang berkualitas, Anda bisa mengunjungi website kami di </span><a href="http://www.metaplaslistrik.com"><strong>www.metaplaslistrik.com</strong></a><strong>.</strong><span style="font-weight: 400;"> Kami </span><strong>jual box panel kabinet murah Jakarta Barat </strong><span style="font-weight: 400;">yang memiliki kualitas tinggi.&nbsp;</span></p>
+        <p><span style="font-weight: 400;">Jika Anda tertarik untuk membeli dan menggunakan box panel kabit yang murah, di tempat yang berkualitas, Anda bisa mengunjungi website kami di </span><a href="http://www.metaplasharmoni.com"><strong>www.metaplasharmoni.com</strong></a><strong>.</strong><span style="font-weight: 400;"> Kami </span><strong>jual box panel kabinet murah Jakarta Barat </strong><span style="font-weight: 400;">yang memiliki kualitas tinggi.&nbsp;</span></p>
         <p><br /><br /><br /></p>
         <p><span style="font-weight: 400;">Keyword: jual box panel kabinet murah Jakarta Barat</span></p>
       </div>

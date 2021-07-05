@@ -53,7 +53,7 @@
           <li style="font-weight: 400;"><span style="font-weight: 400;">Panaskan Protection Slave</span></li>
         </ol>
         <p><span style="font-weight: 400;">Anda cukup memasukkan kedua ujung kabel ke dalam alat dan mengikuti instruksi dari splicer. Setelah kabel tersambung, panaskan protection slave. Proses penyambungan telah selesai di tahap ini.</span></p>
-        <p><span style="font-weight: 400;">Untuk mendapatkan fiber optik dengan komponen yang terbuat dari bahan-bahan berkualitas tinggi, Anda bisa membeli produk dari perusahaan kami. Caranya sangat mudah. Anda bisa mulai dengan mengunjungi website kami di </span><strong>www.metaplaslistrik.com.</strong></p>
+        <p><span style="font-weight: 400;">Untuk mendapatkan fiber optik dengan komponen yang terbuat dari bahan-bahan berkualitas tinggi, Anda bisa membeli produk dari perusahaan kami. Caranya sangat mudah. Anda bisa mulai dengan mengunjungi website kami di </span><strong>www.metaplasharmoni.com.</strong></p>
         <p><span style="font-weight: 400;">Fiber optik merupakan salah satu alat penting dalam jaringan komputer. Alat ini berfungsi mengirimkan dan menerima data. Apabila sampai putus, maka harus </span><strong>menyambung fiber optik </strong><span style="font-weight: 400;">dengan cara yang benar.</span></p>
         <p><br /><br /><br /></p>
         <p><span style="font-weight: 400;">Keyword: Menyambung fiber optik&nbsp;</span></p>

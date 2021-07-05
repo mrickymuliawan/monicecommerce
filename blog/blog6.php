@@ -49,7 +49,7 @@
           <li style="font-weight: 400;"><span style="font-weight: 400;">Plastik</span></li>
         </ol>
         <p><span style="font-weight: 400;">Oleh sebab itu, biasanya produk besi dilapisi dengan cat. </span><strong>Bahan box panel </strong><span style="font-weight: 400;">berikutnya adalah plastik. Box ini umumnya dipakai sebagai tempat komponen kecil dan sederhana.</span></p>
-        <p><span style="font-weight: 400;">Untuk menyimpan komponen listrik dengan rapi dan aman, Anda bisa mendapatkan box panel melalui perusahaan kami. Kami menyediakan berbagai macam box panel untuk memenuhi kebutuhan Anda. Anda bisa mengunjungi website kami di </span><a href="http://www.metaplaslistrik.com"><strong>www.metaplaslistrik.com</strong></a><strong>.&nbsp;</strong></p>
+        <p><span style="font-weight: 400;">Untuk menyimpan komponen listrik dengan rapi dan aman, Anda bisa mendapatkan box panel melalui perusahaan kami. Kami menyediakan berbagai macam box panel untuk memenuhi kebutuhan Anda. Anda bisa mengunjungi website kami di </span><a href="http://www.metaplasharmoni.com"><strong>www.metaplasharmoni.com</strong></a><strong>.&nbsp;</strong></p>
         <p><span style="font-weight: 400;">Tipe dan bahan dari sebuah box panel dapat disesuaikan dengan kebutuhan pelanggan. Hal ini karena komponen listrik yang dimiliki oleh pelanggan juga berbeda-beda. Stainless, besi dan plastik merupakan beberapa </span><strong>bahan box panel.&nbsp;</strong></p>
         <p><br /><br /><br /></p>
         <p><span style="font-weight: 400;">Keyword: bahan box panel</span></p>

@@ -62,7 +62,7 @@
         <p>&nbsp;</p>
         <p><span style="font-weight: 400;">Model Vintage biasanya digunakan oleh kafe atau rumah dengan tema industrial juga. Kamu jika Anda seorang yang kreatif bisa disimpan dengan tata letak yang tepat akan menambah suasana indah dalam ruangan.</span></p>
         <p><span style="font-weight: 400;">Konsep vintage dipadukan dengan industrial pastinya akan terlihat sangat unik. Bentuk seperti ini sering juga digunakan oleh Kerajaan fiksi pada film-film disney. Karena bentuknya yang unik.</span></p>
-        <p><span style="font-weight: 400;">Dengan berbagai macam bentuk unik ini Anda tidak perlu khawatir mengenai biaya. Anda dapat membeli lemari besi sesuai dengan kebutuhan dengan mengunjungi website kami di </span><a href="http://www.metaplaslistrik.com"><strong>www.metaplaslistrik.com</strong></a><span style="font-weight: 400;">. Disitulah </span><strong>PT Metaplas Harmoni </strong><span style="font-weight: 400;">menyediakan keperluan Anda.</span></p>
+        <p><span style="font-weight: 400;">Dengan berbagai macam bentuk unik ini Anda tidak perlu khawatir mengenai biaya. Anda dapat membeli lemari besi sesuai dengan kebutuhan dengan mengunjungi website kami di </span><a href="http://www.metaplasharmoni.com"><strong>www.metaplasharmoni.com</strong></a><span style="font-weight: 400;">. Disitulah </span><strong>PT Metaplas Harmoni </strong><span style="font-weight: 400;">menyediakan keperluan Anda.</span></p>
         <p>&nbsp;</p>
         <p><span style="font-weight: 400;">Keyword: PT Metaplas Harmoni</span></p>
         <p>&nbsp;</p>

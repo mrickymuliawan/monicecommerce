@@ -24,39 +24,23 @@ include('../connection.php');
     </div>
     <!-- /.content-header -->
 
-  <!-- Main content -->
-  <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-9">
-                  <h5>Data Voucher</h5>
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h5>Data Voucher</h5>
+                  </div>
+                  <div class="col-md-3 text-right">
+                    <a href="export_pdf.php" class="btn btn-success btn-md mb-3">Export PDF</a>
+                  </div>
                 </div>
-                <div class="col-md-3 text-right">
-                  <a href="export_pdf.php" class="btn btn-success btn-md mb-3">Export PDF</a>
-                </div>
-              </div>
-              <table class="table table-bordered table-striped mt-3 mydatatable">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Code</th>
-                    <th>Description</th>
-                    <th>Quota</th>
-                    <th>Percent</th>
-                    <th>Start Date</th>
-                    <th>Expire Date</th>
-                    <th>Voucher Used</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $result = mysqli_query($link, "SELECT vouchers.*, COUNT(`order`.voucher_id) as voucher_used FROM vouchers LEFT JOIN `order` ON vouchers.id=`order`.voucher_id GROUP BY vouchers.id");
-                  while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
+                <table class="table table-bordered table-striped mt-3 mydatatable">
+                  <thead>
                     <tr>
                       <th>No</th>
                       <th>Code</th>
