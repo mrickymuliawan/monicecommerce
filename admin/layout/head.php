@@ -4,7 +4,7 @@ include('config.php');
 if (!isset($_SESSION['admin'])) {
   header("Location: $baseUrl/admin/login.php");
 }
-include('connection.php'); ?>
+include('../../connection.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">

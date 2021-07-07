@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 date_default_timezone_set('Asia/Jakarta');
 if (isset($_POST['code_btn'])) {
   $query = mysqli_query($link, "select * from vouchers where code='$_POST[voucher_code]'");

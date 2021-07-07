@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("../connection.php");
 
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

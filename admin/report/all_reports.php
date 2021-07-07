@@ -1,6 +1,5 @@
 <?php
 include('../layout/head.php');
-include('../connection.php');
 ?>
 <div class="wrapper">
 

@@ -1,3 +1,3 @@
 <?php
 
-$baseUrl = 'http://php.local/ecommerce';
+$baseUrl = 'https://metaplasharmoni.com';

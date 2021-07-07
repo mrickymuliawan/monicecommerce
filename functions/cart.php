@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("../connection.php");
 session_start();
 if (empty($_SESSION)) {
   $data = json_encode($_REQUEST);

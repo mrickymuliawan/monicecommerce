@@ -1,6 +1,6 @@
 <?php
 
-include('connection.php');
+include('../connection.php');
 
 $result = mysqli_query($link, "select * from user where email='$_POST[email]' and password='" . md5($_POST['password']) . "' and role='user'");
 $data = mysqli_fetch_assoc($result);

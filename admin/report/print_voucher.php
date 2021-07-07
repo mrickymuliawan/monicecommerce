@@ -1,6 +1,6 @@
 <?php
 
-include('../connection.php');
+include('../../connection.php');
 ?>
 
 <table border="1" class="table table-bordered table-striped mt-3 mydatatable">
