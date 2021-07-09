@@ -80,6 +80,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="<?= $baseUrl ?>/admin/feedback/all_feedback.php" class="nav-link">
+            <em class="nav-icon fas fa-list"></em>
+            <p>
+              Feedback
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="<?= $baseUrl ?>/admin/functions/logout.php" class="nav-link">
             <em class="nav-icon fas fa-sign-out-alt"></em>
             <p>
