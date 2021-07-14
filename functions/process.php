@@ -29,19 +29,24 @@ if (isset($_POST['code_btn'])) {
   $voucherId = 0;
   foreach ($_POST['data'] as $inputData) {
     $input = json_decode($inputData, true);
-    $query = mysqli_query($link, "select stock, name from product where id=$input[productId]");
-    $data = mysqli_fetch_assoc($query);
-    if ($input['qty'] > $data['stock']) {
-      header("Location: $baseUrl/cart.php?message=$data[name] out of stock");
-      return false;
+    $productId = $input['productId'];
+    if($productId!=0){
+      $query = mysqli_query($link, "select stock, name from product where id=$productId");
+      $data = mysqli_fetch_assoc($query);
+      if ($input['qty'] > $data['stock']) {
+        header("Location: $baseUrl/cart.php?message=$data[name] out of stock");
+        return false;
+      }
     }
     $totalQty += $input['qty'];
     $totalPrice += $input['price'];
   }
   foreach ($_POST['select'] as $selects) {
-    $selectData = explode(',', $selects);
-    foreach ($selectData  as $cartId) {
-      mysqli_query($link, "delete from carts where id=$cartId");
+    $selectData = json_decode($selects);
+    if($selectData!=0){
+      foreach ($selectData  as $cartId) {
+        mysqli_query($link, "delete from carts where id=$cartId");
+      }
     }
   }
   if (isset($_POST['voucher_code'])) {
@@ -54,7 +59,6 @@ if (isset($_POST['code_btn'])) {
     }
   }
   $result = mysqli_query($link, "insert into `order` (address, total_qty, total_price, user_id, status, voucher_id, created_at, updated_at) values ('$_POST[address]','$totalQty', '$totalPrice', '$_SESSION[user_id]', 'pending payment', $voucherId,'" . date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "')");
-
 
   if (!$result) {
     echo mysqli_error($link);

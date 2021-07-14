@@ -32,7 +32,8 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="<?= $baseUrl ?>/admin/user/create.php">Create</a>
+                <a class="btn btn-success mb-2" href="<?= $baseUrl ?>/admin/user/create.php">Create</a>
+                <a href="./print_users.php" class='btn btn-primary mb-2' target="_blank">Print</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
