@@ -1,5 +1,5 @@
 <?php
 
-$link = mysqli_connect("localhost", "metaplas_user", "metaplas123", "metaplas_ecommerce");
+$link = mysqli_connect("mysql", "root", "root", "monic_commerce");
 mysqli_connect_error();
 include('config.php');

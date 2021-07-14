@@ -35,7 +35,8 @@ include('../layout/head.php');
                     <h5>Data Voucher</h5>
                   </div>
                   <div class="col-md-3 text-right">
-                    <a href="export_pdf.php" class="btn btn-success btn-md mb-3">Export PDF</a>
+                    <a href="export_pdf.php" class="btn btn-success btn-md mb-3">Export All Report PDF</a>
+                    <a href="./print_voucher.php" class='btn btn-primary mb-3' target="_blank">Print</a>
                   </div>
                 </div>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
@@ -76,11 +77,10 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between mb-3">
                   <h5>Data Product</h5>
-                  <a href="./print_product.php" class='btn btn-primary'>Print</a>
+                  <a href="./print_product.php" class='btn btn-primary' target="_blank">Print</a>
                 </div>
-                <br>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -112,7 +112,10 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5>Data Order</h5>
+                <div class="row justify-content-between mb-3">
+                  <h5>Data Order</h5>
+                  <a href="./print_order.php" class='btn btn-primary' target="_blank">Print</a>
+                </div>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>

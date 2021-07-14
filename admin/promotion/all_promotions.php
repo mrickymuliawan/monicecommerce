@@ -32,7 +32,8 @@ include('../layout/head.php');
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <a class="btn btn-primary mb-2" href="<?= $baseUrl ?>/admin/promotion/create.php">Create</a>
+                <a class="btn btn-success mb-2" href="<?= $baseUrl ?>/admin/promotion/create.php">Create</a>
+                <a href="../report/print_voucher.php" class='btn btn-primary mb-2' target="_blank">Print</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
@@ -63,7 +64,7 @@ include('../layout/head.php');
                         <td><?= $row['voucher_used'] ?></td>
                         <td>
                           <a href='<?= $baseUrl ?>admin/promotion/edit.php?id=<?= $row['id'] ?>' class='btn btn-warning'>Edit</a>
-                          <a href='<?= $baseUrl ?>/admin/promotion/functions/delete.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm(' Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>
+                          <a href='<?= $baseUrl ?>/admin/promotion/functions/delete.php?id=<?= $row['id'] ?>' class="btn btn-danger" onclick="return confirm(' Data <?= $row['code']; ?> Akan Dihapus');">Delete</a>
                         </td>
                       </tr>
                     <?php } ?>
