@@ -3,7 +3,7 @@ include('../layout/head.php');
 include('../../connection.php');
 include('../../config.php');
 
-$result = mysqli_query($link, "select u.name buyer_name,o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
+$result = mysqli_query($link, "select o.image_url, u.name buyer_name,o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
 right join `order_item` oi on oi.order_id=o.id 
 inner join `product` p on oi.product_id=p.id 
 inner join `user` u on u.id=o.user_id
@@ -71,6 +71,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                     </tr>
                   </tfoot>
                 </table>
+                <hr>
+                <p>Bukti Transfer</p>
+                <img src="<?= $data[0]['image_url'] ?>" alt="">
               </div>
             </div>
           </div>
