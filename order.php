@@ -35,6 +35,9 @@
                   <button class="btn" data-toggle="collapse" data-target="<?= $row['id'] ?>" aria-expanded="true" aria-controls="collapseOne">
                     <?= date('d/m/Y H:i', strtotime($row['created_at'])) ?> - <?= $row['total_qty'] ?> items
                   </button>
+
+                  <small>status: <?= $row['status'] ?></small>
+
                 </h5>
               </div>
               <form action="functions/upload-bukti.php" method="POST" enctype="multipart/form-data">
@@ -55,7 +58,6 @@
                           <br>
 
                           <span>quantity: <?= $row2['quantity'] ?></span>
-                          <p>status: <?= $row['status'] ?></p>
                         </div>
                         <div class='col-2'>
                           <h3>Total</h3>
@@ -69,7 +71,8 @@
                           <input name="image_url" type="file" class="form-control" accept="image/*">
                           <input name="id" type="hidden" value="<?= $row['id'] ?>">
                           <br>
-                          <button class='btn btn-primary'>Save</button>
+                          <button class='btn btn-primary'>Upload</button>
+                          <a href='functions/confirm.php?id=<?= $row['id'] ?>' class='btn btn-success'>Konfirmasi Penerimaan</a>
 
                         </div>
                       </div>

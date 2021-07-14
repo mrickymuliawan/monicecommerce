@@ -38,6 +38,9 @@ include("../connection.php");
         $count = mysqli_num_rows($result);
       ?>
         <li class="nav-item">
+          <a class="nav-link" href="<?= $baseUrl ?>/order.php"> <em class="fas fa-list"></em> Order</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="<?= $baseUrl ?>/cart.php"> <?php if ($count > 0) {
                                                                   echo "<span class='badge badge-danger navbar-badge'>$count</span>";
                                                                 } ?><em class="fas fa-shopping-cart"></em> Cart</a>

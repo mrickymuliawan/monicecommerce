@@ -17,7 +17,17 @@
   <?php include('layout/navbar.php') ?>
   <div class="container-fluid">
     <div class="row justify-content-center">
+
       <div class='col-8 mt-5 border p-2'>
+        <div>
+          <h2>Pengiriman</h2>
+          <label for="">Alamat</label>
+          <textarea name="address" type="text" class="form-control"> </textarea>
+          <p>Estimasi Ongkir</p>
+          <b>Rp. 12.000</b>
+        </div>
+        <br>
+
         <h2>Cart</h2>
         <p class="alert-warning text-center"><?= $_GET['message'] ?></p>
         <form action="checkout.php" method="post">
@@ -54,7 +64,7 @@
             <tr>
               <td colspan="2">Total</td>
               <td class="text-center"><?= $qtyTotal ?></td>
-              <td>Rp. <?= number_format($total) ?></td>
+              <td>Rp. <?= number_format($total) + 12000 ?></td>
             </tr>
           </table>
           <div class="row justify-content-end">
@@ -73,11 +83,7 @@
             </div>
           </div>
 
-          <div>
-            <h2>Pengiriman</h2>
-            <label for="">Alamat</label>
-            <textarea name="address" type="text" class="form-control"> </textarea>
-          </div>
+
           <?php if ($i != 0) { ?>
             <div class="row justify-content-end mr-auto mt-2">
               <?php if (isset($_GET['info'])) { ?>
