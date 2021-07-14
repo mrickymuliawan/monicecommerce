@@ -3,7 +3,7 @@
 include('../../connection.php');
 ?>
 
-<table border="1" class="table table-bordered table-striped mt-3 mydatatable">
+<table border="1" style="width: 100%; text-align:center;">
   <thead>
     <tr>
       <th>No</th>
