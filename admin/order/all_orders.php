@@ -33,12 +33,14 @@ include('../layout/head.php');
             <div class="card">
               <div class="card-body">
                 <a href="../report/print_order.php" class='btn btn-primary mb-2' target="_blank">Print</a>
+                <a href="../report/print_order_delivered.php" class='btn btn-primary mb-2' target="_blank">Print Order Delivered</a>
                 <table class="table table-bordered table-striped mt-3 mydatatable">
                   <thead>
                     <tr>
                       <th>No</th>
                       <th>Name</th>
                       <th>Qty</th>
+                      <th>Resi</th>
                       <th>Total</th>
                       <th>Status</th>
                       <th>Action</th>
@@ -55,6 +57,7 @@ include('../layout/head.php');
                         <td><?= $row['id'] ?></td>
                         <td><?= $row['name'] ?></td>
                         <td><?= $row['total_qty'] ?></td>
+                        <td><?= $row['resi'] ?></td>
                         <td>Rp. <?= number_format($row['total_price']) ?></td>
                         <td class="text-center">
                           <h5><span class="badge badge-<?= $class ?>"><?= ucwords($row['status']) ?></span></h5>

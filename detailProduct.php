@@ -40,10 +40,7 @@ $row = mysqli_fetch_assoc($result);
               <label class="col-sm-3 col-form-label">Stok <strong><?= $row['stock'] ?></strong></label>
             </div>
           </div>
-          <div class="form-group">
-            <label><strong>Description</strong></label>
-            <input type="text" class="form-control" name="description">
-          </div>
+
           <div class="cart mt-4 mb-4">
             <button type="submit" class="btn btn-secondary btn-block"><em class="fas fa-shopping-cart"></em> Add to Cart</button>
           </div>

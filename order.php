@@ -65,6 +65,7 @@
                           <br>
                         </div>
                         <div class='col-12'>
+                          <p>No Resi: <b><?= $row['resi'] ?></b></p>
                           <p>Bukti transfer</p>
                           <img src="<?= $row['image_url'] ?>" width="20%">
                           <br>
@@ -72,7 +73,16 @@
                           <input name="id" type="hidden" value="<?= $row['id'] ?>">
                           <br>
                           <button class='btn btn-primary'>Upload</button>
-                          <a href='functions/confirm.php?id=<?= $row['id'] ?>' class='btn btn-success'>Konfirmasi Penerimaan</a>
+
+                          <?php
+                          if ($row['status'] != 'selesai') {
+                          ?>
+                            <a href='functions/confirm.php?id=<?= $row['id'] ?>' class='btn btn-success'>Konfirmasi Penerimaan</a>
+                          <?php
+                          }
+
+                          ?>
+
 
                         </div>
                       </div>

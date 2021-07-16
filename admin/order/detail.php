@@ -3,7 +3,7 @@ include('../layout/head.php');
 include('../../connection.php');
 include('../../config.php');
 
-$result = mysqli_query($link, "select o.image_url, u.name buyer_name,o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
+$result = mysqli_query($link, "select o.resi, o.image_url, u.name buyer_name,o.id, oi.quantity, oi.price , p.name, p.price product_price, o.status, o.total_price, o.total_qty from `order` o 
 right join `order_item` oi on oi.order_id=o.id 
 inner join `product` p on oi.product_id=p.id 
 inner join `user` u on u.id=o.user_id
@@ -46,6 +46,15 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="card">
               <div class="card-body">
                 <a class="btn btn-danger mb-2" href="<?= $baseUrl ?>/admin/order/all_orders.php"><em class="fas fa-arrow-left"></em> Back</a>
+                <form action="functions/update_resi.php" method="POST">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">No Resi</label>
+                    <input type="text" value="<?= $data[0]['resi'] ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="resi" placeholder="Enter Resi">
+                  </div>
+                  <input type="hidden" value="<?= $data[0]['id'] ?>" name="id">
+                  <button class='btn btn-primary' type="submit">Update</button>
+                </form>
+                <hr>
                 <table class="table table-bordered table-striped">
                   <thead>
                     <th>Product Name</th>

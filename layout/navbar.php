@@ -16,8 +16,11 @@ include("../connection.php");
       <li class="nav-item">
         <a class="nav-link" href="<?= $baseUrl ?>/blog/"><em class="fas fa-blog"></em> Blog</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= $baseUrl ?>/contactus.php"><em class="fas fa-envelope"></em> Contact Us</a>
+      </li>
     </ul>
-    <form class="ml-3 d-inline w-75">
+    <form class="ml-3 d-inline w-50">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search something">
         <div class="input-group-append">

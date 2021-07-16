@@ -1,7 +1,7 @@
 <?php include('../../connection.php'); ?>
 <?php include('print_head.php'); ?>
 
-<h2 style="text-align: center;">Sales Report</h2>
+<h2 style="text-align: center;">Sales Delivered Report</h2>
 <table style="width: 100%; text-align:center;" border="1">
   <thead>
     <tr>
@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <?php
-    $result = mysqli_query($link, "SELECT u.name, o.*, p.name as pname FROM `order` o INNER JOIN `user` u ON u.id=o.user_id INNER JOIN order_item oi on oi.order_id=o.id INNER JOIN product p on p.id=oi.product_id ");
+    $result = mysqli_query($link, "SELECT u.name, o.*, p.name as pname FROM `order` o INNER JOIN `user` u ON u.id=o.user_id INNER JOIN order_item oi on oi.order_id=o.id INNER JOIN product p on p.id=oi.product_id where `status`='selesai' ");
 
     while ($row = mysqli_fetch_assoc($result)) {
       $class = $row['status'] == 'pending payment' ? 'warning' : ($row['status'] == 'proses' ? 'info' : ($row['status'] == 'dikirim' ? 'primary' : 'success'));

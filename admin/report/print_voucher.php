@@ -1,7 +1,9 @@
 <?php
 
 include('../../connection.php');
+include('print_head.php');
 ?>
+<h2 style="text-align: center;">Promotion Report</h2>
 
 <table border="1" style="width: 100%; text-align:center;">
   <thead>

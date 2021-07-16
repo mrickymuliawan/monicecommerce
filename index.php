@@ -52,8 +52,8 @@
           $result = mysqli_query($link, "select * from categories");
           while ($row = mysqli_fetch_assoc($result)) { ?>
             <a href="index.php?category=<?= $row['id'] ?>" class="list-group-item list-group-item-action <?php if ($_GET['category'] == $row['id']) {
-                                                                                                          echo 'active';
-                                                                                                        } ?>"><?= $row['name'] ?></a>
+                                                                                                            echo 'active';
+                                                                                                          } ?>"><?= $row['name'] ?></a>
           <?php } ?>
         </div>
       </div>
@@ -66,9 +66,9 @@
 
           while ($row = mysqli_fetch_assoc($result)) {
             echo "
-              <div class='col-4 my-2'>
+              <div class='col-3 my-2'>
                 <div class='card'>
-                <img class='card-img-top' src='$row[image_url]' alt='thumb Image' style='height:350px'>
+                <img class='card-img-top' src='$row[image_url]' alt='thumb Image' style='width:100%'>
                 <div class='card-body'>
                   <h5 class='card-title'>$row[name]</h5>
                   <h5 class='card-title'>Rp. " . number_format($row['price']) . "</h5>
