@@ -23,8 +23,6 @@
           <h2>Pengiriman</h2>
           <label for="">Alamat</label>
           <textarea name="address" type="text" class="form-control"> </textarea>
-          <p>Estimasi Ongkir</p>
-          <b>Rp. 12.000</b>
         </div>
         <br>
 
@@ -49,17 +47,18 @@ where user_id=$_SESSION[user_id]
 group by carts.product_id");
             $total = $qtyTotal = $i = 0;
             while ($row = mysqli_fetch_assoc($result)) {
+              $cartId = json_decode(json_encode("[".$row['cart_id']."]"),true);
               $qtyTotal += $row['qty'];
               $price = $row['qty'] * $row['product_price'];
               $total += $price;
             ?>
 
               <tr>
-                <td class="text-center"><input type="checkbox" data-index="<?= $i ?>" checked name="select[]" value='<?= $row['cart_id'] ?>'></td>
+                <td class="text-center"><input type="checkbox" data-index="<?= $i ?>" checked name="select[]" value='<?= $cartId ?>'></td>
                 <td><?= $row['name'] ?></td>
                 <td class="text-center"><?= $row['qty'] ?></td>
                 <td>Rp. <?= number_format($price) ?></td>
-                <td class="text-center"><a href="<?= $baseUrl ?>/functions/delete_cart.php?select=<?= $row['cart_id'] ?>" class="btn btn-sm btn-danger"><em class="fas fa-trash"></em></a></td>
+                <td class="text-center"><a href='<?= $baseUrl ?>/functions/delete_cart.php?select=<?= $cartId ?>' class="btn btn-sm btn-danger"><em class="fas fa-trash"></em></a></td>
               </tr>
               <input type="hidden" name="data[]" id="data<?= $i ?>" value='<?= json_encode(["productId" => $row['product_id'], "qty" => $row['qty'], "price" => $price]) ?>'>
             <?php $i++;
@@ -67,7 +66,7 @@ group by carts.product_id");
             <tr>
               <td colspan="2">Total</td>
               <td class="text-center"><?= $qtyTotal ?></td>
-              <td>Rp. <?= number_format($total) + 12000 ?></td>
+              <td>Rp. <?= number_format($total) ?></td>
             </tr>
           </table>
           <div class="row justify-content-end">
