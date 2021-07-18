@@ -35,13 +35,14 @@
             $result = mysqli_query($link, "select json_arrayagg(carts.id) as cart_id, carts.*, product.name, product.price as product_price, sum(carts.qty) as qty, sum(product.price) as price from carts inner join product on carts.product_id=product.id where user_id=$_SESSION[user_id] group by carts.product_id");
             $total = $qtyTotal = $i = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                $qtyTotal += $row['qty'];
-                $price = $row['qty'] * $row['product_price'];
-                $total += $price;
+              $cartId = json_decode(json_encode("[".$row['cart_id']."]"),true);
+              $qtyTotal += $row['qty'];
+              $price = $row['qty'] * $row['product_price'];
+              $total += $price;
             ?>
 
               <tr>
-                <td class="text-center"><input type="checkbox" data-index="<?= $i ?>" checked name="select[]" value='<?= $row['cart_id'] ?>'></td>
+                <td class="text-center"><input type="checkbox" data-index="<?= $i ?>" checked name="select[]" value='<?= $cartId ?>'></td>
                 <td><?= $row['name'] ?></td>
                 <td class="text-center"><?= $row['qty'] ?></td>
                 <td>Rp. <?= number_format($price) ?></td>
@@ -53,13 +54,13 @@
                     <td class="text-center"><input type="checkbox" disabled name="select[]" checked id="ongkir" value="0"></td>
                     <td>Ongkos Kirim</td>
                     <td class="text-center">--</td>
-                    <td>Rp. 5.000</td>
+                    <td>Rp. 12.000</td>
                 </tr>
-              <input type="hidden" name="data[]" id="data<?= $i+1 ?>" value='<?= json_encode(["productId" => 0, "qty" => 0, "price" => 5000]) ?>'>
+              <input type="hidden" name="data[]" id="data<?= $i+1 ?>" value='<?= json_encode(["productId" => 0, "qty" => 0, "price" => 12000]) ?>'>
             <tr>
               <td colspan="2">Total</td>
               <td class="text-center"><?= $qtyTotal ?></td>
-              <td>Rp. <?= number_format($total+5000) ?></td>
+              <td>Rp. <?= number_format($total + 12000) ?></td>
             </tr>
           </table>
 

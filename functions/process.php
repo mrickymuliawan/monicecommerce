@@ -42,9 +42,9 @@ if (isset($_POST['code_btn'])) {
     $totalPrice += $input['price'];
   }
   foreach ($_POST['select'] as $selects) {
-    $selectData = json_decode($selects);
+    $selectData = json_decode($selects,true)[0];
     if($selectData!=0){
-      foreach ($selectData  as $cartId) {
+      foreach ($selectData as $cartId) {
         mysqli_query($link, "delete from carts where id=$cartId");
       }
     }
